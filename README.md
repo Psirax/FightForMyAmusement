@@ -1,4 +1,4 @@
-Welcome to the Arena Project.
+# Welcome to the Arena Project.
 
 The entire purpose of this project is to teach programming principles. This project will evolve
 to show why functions and Object Oriented Programming principles are useful. Many times, 
@@ -7,11 +7,9 @@ complexity to really show the advantages of such things. This program (and the r
 contains it) is designed to provide a learner with a large enough playground to understand WHY
 OOP principles are actually useful and not just unnecessary and confusing.
 
-====================
-*** THIS VERSION ***
-====================
+## THIS VERSION
 
-**** Form: ****
+**_Form:_** 
 This version uses no functions and as few objects as reasonably possible. (Not using char[]
 instead of Strings, that's just cruel.) The program is completely written in main() function
 of the Arena class in the default package.
@@ -19,7 +17,7 @@ of the Arena class in the default package.
 This serves as a baseline verison of the game before later versions begin refactoring the code to
 use function, objects, etc.
 
-**** Function: ****
+**_Function:_**
 Console-based game where the user selects the size of the arena and how many gladiators will be
 fighting in that arena. The user can customize their gladiators if they want. If no customization
 is requested, gladiators are auto-generated.
