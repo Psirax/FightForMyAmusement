@@ -102,16 +102,13 @@ public class Arena {
         fighterEnergy = new int[numCombatants];
         fighterXLoc = new int[numCombatants];
         fighterYLoc = new int[numCombatants];
-        fighterInventory = new String[numCombatants] []; // each fighter could potentially pick up multiple items.
-        for (int i=0; i < numCombatants; i++) {
-        	fighterInventory[i] = new String[5]; // a fighter could conceivably hold all five items, so give them room to do so.
-        }
+        fighterInventory = new String[numCombatants] [5]; // each fighter could potentially pick up multiple items.
 
         System.out.println("Yes sir! " + numCombatants + " gladiators will be doing battle in a " + battleGridSize + " by " + battleGridSize + " arena!");
         
         // Would you like to customize your combatants? 
-        inputBuffer = "";
-        while(inputBuffer.compareToIgnoreCase("Y") != 0 && inputBuffer.compareToIgnoreCase("N") != 0) {
+        inputBuffer = "";        
+        while(!inputBuffer.equalsIgnoreCase("Y") && !inputBuffer.equalsIgnoreCase("N")) {
             System.out.print("Would you like to customize your gladiators? (Y/N) ");
             try {
             	inputBuffer = input.readLine();
@@ -120,9 +117,9 @@ public class Arena {
             	System.exit(1);
             }
 
-            if (inputBuffer.compareToIgnoreCase("Y") != 0 && inputBuffer.compareToIgnoreCase("N") != 0) {
+            if (!inputBuffer.equalsIgnoreCase("Y") && !inputBuffer.equalsIgnoreCase("N")) {
                System.out.println("It's a yes or no question and you still managed to get it wrong. How did you get come into your money and power!?");
-            } else if (inputBuffer.compareToIgnoreCase("Y") == 0) {
+            } else if (inputBuffer.equalsIgnoreCase("Y")) {
                 customizeCombatants = true;
             }
         }
@@ -244,7 +241,7 @@ public class Arena {
                 }
 
                 inputBuffer = "";
-                while (inputBuffer.compareToIgnoreCase("Y") != 0 && inputBuffer.compareToIgnoreCase("N") != 0) {
+                while (!inputBuffer.equalsIgnoreCase("Y") && !inputBuffer.equalsIgnoreCase("N")) {
                     System.out.print("\nThis gladiator is ready! Customize the next gladiator? (Y/N) ");
                     try {
                     	inputBuffer = input.readLine();
@@ -253,14 +250,14 @@ public class Arena {
                     	System.exit(1);
                     }
 
-                    if (inputBuffer.compareToIgnoreCase("Y") != 0 && inputBuffer.compareToIgnoreCase("N") != 0) {
+                    if (!inputBuffer.equalsIgnoreCase("Y") && !inputBuffer.equalsIgnoreCase("N")) {
                         System.out.println("It's a yes or no question and you still managed to get it wrong. How did you get come into your"
                         					+ " money and power!?");
-                    } else if (inputBuffer.compareToIgnoreCase("N") == 0) {
+                    } else if (inputBuffer.equalsIgnoreCase("N")) {
                         customizeCombatants = false; // change flag to false so the random stat generator kicks in.
                     }
                 }
-            } else { // If not customizing, randomly generate stats
+            } else { // If not customizing, randomly generate statss
                 fighterName[i] = FIGHTER_NAME_POOL[randomGenerator.nextInt(20)];
 
                 // Search to see if this name has already been used for another gladiator. If it has, reassign a random name and start checking
